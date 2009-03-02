@@ -1,0 +1,26 @@
+<h1>Dominic's Blog :-></h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Owner</th>
+    <th>Posted at</th>
+  </tr>
+
+<% for article in @articles %>
+  <tr>
+    <td><%=h article.title %></td>
+    <td><%=h article.content %></td>
+    <td><%=h article.owner %></td>
+    <td><%=h article.posted_at %></td>
+    <td><%= link_to 'Show', article %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New article', new_article_path %>
